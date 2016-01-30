@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Destroy Totem.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/PeopleMover.js">
     <Files>
       <File FileName="Assets/Script/Bounce.js" Line="2" Column="1" />
       <File FileName="Assets/Script/Totem Spawn.js" Line="16" Column="118" />
