@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+//Attach to Cursor prefab
+
 /*****This Script Spawns Totems*******/
 
 var sprite : Transform;
@@ -8,14 +10,10 @@ var debugmode : boolean = false; //Toggles Debugmode, self explanatory
 var speed : float = 1f; //Speed of Cursor
 
 
-private var cursorPosX : float = 0f;
-private var cursorPosY : float = 0f;
-
-
 function Update () //Updates Every Frame
 { 
-	var move = Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-	transform.position = transform.position + (move * speed * Time.deltaTime);
+	var move = Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0); //Takes info from wasd and arrow keys
+	transform.position = transform.position + (move * speed * Time.deltaTime);	//Translates the cursor according to keys
 	
 	if (Input.GetKeyDown("space")) //Detects when "space" is "PRESSED"//
 	{
@@ -27,7 +25,7 @@ function Update () //Updates Every Frame
 		Instantiate(objectSpawned, Vector2(transform.position.x,transform.position.y),Quaternion.identity); 
 		////////////////////////////////////////////////////////////
 		//-Creates an instance of objectSpawned variable (Transform),
-		// 	Translate it to x axis 2, and y axis 0. 
+		// 	translates it to the current position of the cursor.  
 		// -Quanternion.identy, just means there is no rotation and it is
 		// 	perfectly aline with the world axis. 
 		/////////////////////////////////////////////////////////////

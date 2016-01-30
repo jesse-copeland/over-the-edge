@@ -1,9 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Totem Spawn.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Destroy Totem.js">
     <Files>
       <File FileName="Assets/Script/Bounce.js" Line="2" Column="1" />
-      <File FileName="Assets/Script/Totem Spawn.js" Line="33" Column="64" />
+      <File FileName="Assets/Script/Totem Spawn.js" Line="16" Column="118" />
+      <File FileName="Assets/Script/Destroy Totem.js" Line="14" Column="45" />
+      <File FileName="Assets/Script/VolcanoDeath.js" Line="3" Column="43" />
+      <File FileName="Assets/Script/PeopleMover.js" Line="3" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
