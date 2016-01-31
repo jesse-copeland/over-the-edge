@@ -21,7 +21,7 @@ private final var mouseButtonRight = 1;
 private final var mouseButtonMiddle = 2;
 
 // Constants //
-private final var spawnHeight = 5;
+private final var spawnHeight = 11;
 
 // Omen spawning stuff //
 private var omenReserves = 3; //How many omens does the player have to spend?
