@@ -13,7 +13,7 @@ var prefabOmen : GameObject;
 var terrain : GameObject;
 private var terrainCollider : TerrainCollider;
 
-private final var approximateFrameRate = 50;
+private final var approximateFrameRate = 40;
 
 // Mouse button mapping //
 private final var mouseButtonLeft = 0;
@@ -24,7 +24,7 @@ private final var mouseButtonMiddle = 2;
 private final var spawnHeight = 13;
 
 // Omen spawning stuff //
-private var omenReserves = 3; //How many omens does the player have to spend?
+static var omenReserves = 3; //How many omens does the player have to spend?
 private final var maxOmenReserves = 5; //How many omens can a player hold in reserve?
 private final var maxSimultaneousOmens = 3; //How many omens can the player have active at once?
 private final var secondsToGainOmen = 15;
@@ -34,12 +34,23 @@ private final var secondsToCooldownOmen = 1;
 private final var framesToCooldownOmen = secondsToCooldownOmen * approximateFrameRate;
 private var omenCooldown = 0;
 
+// Totem spawning stuff //
+static var totemReserves = 5; //How many omens does the player have to spend?
+private final var maxTotemReserves = 10; //How many omens can a player hold in reserve?
+private final var maxSimultaneousTotems = 10; //How many omens can the player have active at once?
+private final var secondsToGainTotem = 5;
+private final var framesToGainTotem = secondsToGainTotem * approximateFrameRate;
+private var totemGainTimer = framesToGainTotem;
+private final var secondsToCooldownTotem = 0.5;
+private final var framesToCooldownTotem = secondsToCooldownTotem * approximateFrameRate;
+private var totemCooldown = 0;
+
 function Start () {
 	terrainCollider = terrain.GetComponent("TerrainCollider");
 }
 
 function Update () {
-	// Handle omen gain stuff //
+	// Handle gain stuff //
 	// Omen gain timer //
 	if (omenGainTimer > 0) {
 		omenGainTimer--;
@@ -48,8 +59,19 @@ function Update () {
 		omenGainTimer = framesToGainOmen;
 	}
 
+	// Totem gain timer //
+	if (totemGainTimer > 0) {
+		totemGainTimer--;
+	} else if (totemReserves < maxTotemReserves) {
+		totemReserves++;
+		totemGainTimer = framesToGainTotem;
+	}
+
 	// Omen cooldown timer //
 	if (omenCooldown > 0) omenCooldown--;
+
+	// Totem cooldown timer //
+	if (totemCooldown > 0) totemCooldown--;
 
 	if (Input.GetMouseButtonDown(mouseButtonLeft)) mousePressedLeft();
 	if (Input.GetMouseButtonDown(mouseButtonRight)) mousePressedRight();
@@ -86,6 +108,12 @@ function mousePressedLeft() {
 	var x = clickPosition.x;
 	var y = spawnHeight;
 	var z = clickPosition.z;
+
+	// Make sure we have enough totems //
+	if (totemReserves <= 0 || totemCooldown > 0) return;
+
+	totemReserves--;
+	totemCooldown = framesToCooldownTotem;
 	Instantiate(prefabTotem, Vector3 (x, y, z), Quaternion.identity);
 }
 
