@@ -16,7 +16,7 @@ private final var mouseButtonRight = 1;
 private final var mouseButtonMiddle = 2;
 
 // Constants //
-private final var spawnHeight = 10;
+private final var spawnHeight = 5;
 
 function Start () {
 
