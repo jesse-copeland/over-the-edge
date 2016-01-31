@@ -7,10 +7,16 @@
 
 var maxMouthDepth = 255; //Maximum raycast distance
 
+// Objects //
+var prefabTotem : GameObject;
+
 // Mouse button mapping //
 private final var mouseButtonLeft = 0;
 private final var mouseButtonRight = 1;
 private final var mouseButtonMiddle = 2;
+
+// Constants //
+private final var spawnHeight = 10;
 
 function Start () {
 
@@ -44,6 +50,14 @@ function mousePressedLeft() {
 	// Things that happen when the mouse is clicked will go here //
 	var clickPosition : Vector3 = getMouseVector();
 	var clickedObject : GameObject = getObjectClicked();
+
+	// Make sure we've clicked on something... once we have the heightmap implemented, check if it's that we're clicking //
+	if (clickedObject === null) return;
+
+	var x = clickPosition.x;
+	var y = spawnHeight;
+	var z = clickPosition.z;
+	Instantiate(prefabTotem, Vector3 (x, y, z), Quaternion.identity);
 }
 
 function mousePressedRight() {
