@@ -3,8 +3,12 @@
 private final var rangeOfInfluence = 25;
 private final var forceMagnitude = 50;
 
-function Start () {
+private var audiosource : AudioSource;
 
+function Start () {
+	// Play sound on spawn //
+	audiosource = gameObject.GetComponent("AudioSource");
+	audiosource.Play();
 }
 
 function Update () {
