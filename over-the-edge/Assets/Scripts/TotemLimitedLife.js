@@ -23,7 +23,7 @@ function Update () {
 
 function OnCollisionEnter (col : Collision)
 {
-    if(col.gameObject.tag == "SwarmAgent") {
+    if(col.gameObject.tag == "Agent3D") {
         totemTimerStarted = true;
     }
 }
