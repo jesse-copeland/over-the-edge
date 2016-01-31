@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 private final var rangeOfInfluence = 200;
-private final var forceMagnitude = 1000;//-1000; //OH GOD IT'S A VOLCANO WITH TEETH
+private final var forceMagnitude = 0;//-1000; //OH GOD IT'S A VOLCANO WITH TEETH
 private final var forceDistanceExponent = -0.5; //Well, at a distance it's not so bad...
 
 function Start () {
@@ -23,4 +23,14 @@ function Update () {
     		rigidbody.AddForce(forceVector);
     	}
 	}
+}
+
+// Entering the volcano = DEATH //
+function OnTriggerEnter (other : Collider)
+{
+    if(other.gameObject.tag == "Agent3D") {
+        Destroy(other.gameObject);
+    }
+
+    //TODO: Increment score and add scream
 }
