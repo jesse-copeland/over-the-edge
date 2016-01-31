@@ -21,20 +21,9 @@ function Update () {
 	}
 }
 
-/*
-function OnTriggerEnter(other: Collider) { //When we encounter a person, begin the self-destruct sequence
-	if (other === null) return;
-	var otherGameObject = other.transform.parent.gameObject;
-	if (otherGameObject.tag == "Agent3D") {
-		totemTimerStarted = true;
-	}
-}
-*/
-
 function OnCollisionEnter (col : Collision)
 {
-	print("Test");
-    if(col.gameObject.tag == "Agent3D") {
-        Destroy(this.gameObject);
+    if(col.gameObject.tag == "SwarmAgent") {
+        totemTimerStarted = true;
     }
 }
