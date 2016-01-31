@@ -10,7 +10,7 @@ function Start () {
 
 function Update () {
 	var people : GameObject[];
-	people = GameObject.FindGameObjectsWithTag("SwarmAgent"); 
+	people = GameObject.FindGameObjectsWithTag("Agent3D"); 
 	var withinRange = 0;
 	for (var person in people) {
 		var deltaX = this.gameObject.transform.position.x - person.transform.position.x;

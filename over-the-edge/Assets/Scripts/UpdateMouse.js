@@ -10,6 +10,8 @@ var maxMouthDepth = 255; //Maximum raycast distance
 // Objects //
 var prefabTotem : GameObject;
 var prefabOmen : GameObject;
+var terrain : GameObject;
+private var terrainCollider : TerrainCollider;
 
 private final var approximateFrameRate = 50;
 
@@ -33,7 +35,7 @@ private final var framesToCooldownOmen = secondsToCooldownOmen * approximateFram
 private var omenCooldown = 0;
 
 function Start () {
-
+	terrainCollider = terrain.GetComponent("TerrainCollider");
 }
 
 function Update () {
@@ -57,8 +59,9 @@ function Update () {
 function getMouseVector() { //Returns a Vector3 of the mouse's position
 	var ray : Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 	var hit : RaycastHit;
-	if (Physics.Raycast(ray, hit, maxMouthDepth)) {
+	if (terrainCollider.Raycast(ray, hit, maxMouthDepth)) {
 		return hit.point;
+		//return ray.GetPoint(hit.distance);
 	}
 	return null;
 }
