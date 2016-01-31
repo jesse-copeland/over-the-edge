@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
-private final var rangeOfInfluence = 15;
-private final var forceMagnitude = 50;
+private final var rangeOfInfluence = 20;
+private final var forceMagnitude = -50;
 
 function Start () {
 
