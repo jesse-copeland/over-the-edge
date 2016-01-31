@@ -1,8 +1,8 @@
 ﻿#pragma strict
 
 private final var rangeOfInfluence = 200;
-private final var forceMagnitude = -250; //OH GOD IT'S A VOLCANO WITH TEETH
-private final var forceDistanceExponent = -1; //Well, at a distance it's not so bad...
+private final var forceMagnitude = -200; //OH GOD IT'S A VOLCANO WITH TEETH
+private final var forceDistanceExponent = -2; //Well, at a distance it's not so bad...
 
 function Start () {
 
