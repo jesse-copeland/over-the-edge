@@ -4,6 +4,8 @@ private final var rangeOfInfluence = 200;
 private final var forceMagnitude = -750; //OH GOD IT'S A VOLCANO WITH TEETH
 private final var forceDistanceExponent = -1; //Well, at a distance it's not so bad...
 
+static var score = 0;
+
 function Start () {
 
 }
@@ -30,6 +32,7 @@ function OnTriggerEnter (other : Collider)
 {
     if(other.gameObject.tag == "Agent3D") {
         Destroy(other.gameObject);
+        score++;
     }
 
     //TODO: Increment score and add scream
