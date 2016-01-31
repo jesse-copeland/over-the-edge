@@ -34,7 +34,7 @@ public class CompletePlayerController3D : MonoBehaviour
         {
             rb3d.AddForce(-rb3d.velocity * (rb3d.velocity.magnitude - maxSpeed));
         }
-        float angle = (float)((Mathf.Rad2Deg * Mathf.Atan2(rb3d.velocity.x, rb3d.velocity.z)))*0.3f+oldAngle*0.7f;
+        float angle = (float)((Mathf.Rad2Deg * Mathf.Atan2(rb3d.velocity.x, rb3d.velocity.z)) + 90)*0.3f+oldAngle*0.7f;
         oldAngle = angle;
         rb3d.rotation = Quaternion.AngleAxis(angle, Vector3.up);
 
