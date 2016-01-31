@@ -36,7 +36,7 @@ public class CompletePlayerController3D : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Agent3D"))
+        if (other.gameObject.CompareTag("SwarmAgent"))
         {
             Vector3 delta = new Vector3(rb3d.position.x - other.bounds.center.x, 0, rb3d.position.z - other.bounds.center.z);
 
