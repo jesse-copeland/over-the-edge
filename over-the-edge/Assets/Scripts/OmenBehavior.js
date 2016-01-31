@@ -1,14 +1,20 @@
 ﻿#pragma strict
 
-private final var rangeOfInfluence = 20;
+private final var rangeOfInfluence = 40;
 private final var forceMagnitude = -50;
 
 private var audiosource : AudioSource;
+
+var omenLightPrefab : Light;
 
 function Start () {
 	// Play sound on spawn //
 	audiosource = gameObject.GetComponent("AudioSource");
 	audiosource.Play();
+
+	// Generate and attach lightsource //
+	var newLight : Light = Instantiate(omenLightPrefab, Vector3 (gameObject.transform.position.x, 10.0, gameObject.transform.position.z), Quaternion.identity);
+	newLight.transform.parent = gameObject.transform;
 }
 
 function Update () {
