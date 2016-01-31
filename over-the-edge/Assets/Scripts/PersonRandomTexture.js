@@ -15,16 +15,12 @@ function Start () {
 	var randomNum = Random.Range(0.0, 4.0);
 	if (randomNum < 1.0) {
 		renderer.material.SetTexture("_DetailAlbedoMap", tex1);
-		Debug.Log("ONE");
 	} else if (randomNum < 2.0) {
 		renderer.material.SetTexture("_DetailAlbedoMap", tex2);
-		Debug.Log("TWO");
 	} else if (randomNum < 3.0) {
 		renderer.material.SetTexture("_DetailAlbedoMap", tex3);
-		Debug.Log("THREE");
 	} else {
 		renderer.material.SetTexture("_DetailAlbedoMap", tex4);
-		Debug.Log("FOUR");
 	}
 }
 
